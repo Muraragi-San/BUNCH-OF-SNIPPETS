@@ -172,8 +172,7 @@ SECTION-1:
    #cdis is a custom display option that will display messages
    
    #center is to see if you want the custom display to be displayed in the center or near the start.It has been disabled by default.
-    Value 2 for center will make it print only the first sentences in the center and the rest at the start.
-   
+    
    #lineremov is if you dont want a line printed after the message.It has been disabled by default i.e the line will be there.
 
 
