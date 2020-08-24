@@ -1,6 +1,6 @@
 #to know how this works read the bottom part
 
-def linecr(mo="_",rep=1,spa=2,cdis="",center=0,lineremov=0,specialfeature=0,middlepart=12,lineaftersentence=0,adjuster=0,ychar="┆"):
+def linecr(mo="_",rep=1,spa=2,cdis="",center=0,lineremov=0,specialfeature=0,ychar="┆",lineaftersentence=0,adjuster=0,middlepart=12):
     if cdis!="":
         k=(rep*2)+1
     else:
