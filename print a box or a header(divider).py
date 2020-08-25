@@ -95,7 +95,7 @@ def linecr(mo="_",rep=1,spa=2,cdis="",center=0,lineremov=0,specialfeature=0,ycha
 #The function ends here.Read below to know how to use the function
 
 
-
+#linecr(mo="_",rep=1,spa=2,cdis="",center=0,lineremov=0,specialfeature=0,ychar="┆",lineaftersentence=0,adjuster=0,middlepart=12)
 """
 EXAMPLES :
  SECTION-
