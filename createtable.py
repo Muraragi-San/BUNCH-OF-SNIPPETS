@@ -1,4 +1,5 @@
 #To know how to use the function read below!!!
+#Remember this is optimized for a default font size of 16!!
 
 def tablecr(tablecolumninfo,records,disphead=1,ifcenter=0,showtotalentries=0,ifsrno=0,ifsplit=0,tdisplay='T.ENTRIES',emptytobedisplayedas='─'):
   tcl,re,etd=tablecolumninfo,records,emptytobedisplayedas
