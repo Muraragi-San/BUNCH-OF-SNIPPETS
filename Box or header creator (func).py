@@ -1,6 +1,6 @@
 #to know how this works read the bottom part
 
-def linecr(mo="_",rep=1,spa=2,cdis="",center=0,lineremov=0,specialfeature=0,ychar="┆",lineaftersentence=0,adjuster=0,middlepart=12):
+def linecr(mo="_",rep=1,spa=2,cdis="",center=0,lineremov=0,specialfeature=0,lineaftersentence=0,adjuster=0,middlepart=12,ychar="┆"):
     if cdis!="":
         k=(rep*2)+1
     else:
@@ -254,6 +254,7 @@ SECTION-2
                
                
               call:
+                *note-the function has had some changes so these commands are prolly old
                  (1)- linecr("=",1,2,'example',0,0,1)
                  (2)- linecr("=",1,2,'example \nHello!! how are you?? \n :D',0,0,1)
                  (3)- linecr("=",1,2,'example \\{1} \nHello!! how are you?? \\{1}\n :D',0,0,1)
