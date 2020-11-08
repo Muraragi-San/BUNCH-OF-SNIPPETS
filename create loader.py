@@ -14,7 +14,7 @@ def loadercr(text='Loading',timeslot=3,counttime=0):
 
                         print(f"""{text}{'.'*allship}{" "*(len(text)-allship)}\r""",end='')
 
-                      time.sleep(0.23)
+                      time.sleep(0.25)
                       end2= time.time()
                       k+=end2-start2
                     
