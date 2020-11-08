@@ -3,27 +3,25 @@ def loadercr(text='Loading',timeslot=3,counttime=0):
                     allship=0
                     z=text
                     start = time.time()
-                    for trialss in range((timeslot*5)+(int(timeslot//1.5))):
-                         
+                    k=0
+                    while k<timeslot:
                       
-                      if allship==0:
-                        z=f"{text}.{' '*(len(text)-1)}"
-                      elif allship==1:
-                        z=f'{text}..{" "*(len(text)-2)}'
-                      elif allship==2:
-                          z=f'{text}...{" "*(len(text)-3)}'
-                      elif allship==3:
-                          z=f'{text}....{" "*(len(text)-4)}'
-
-                      allship+=1
+                      start2 = time.time()
 
                       if allship==5:
                           allship=0
+                          continue
                       else:
-                        print(f'{z}\r',end='')
-                        time.sleep(0.23)                  
+
+                        print(f"""{text}{'.'*allship}{" "*(len(text)-allship)}\r""",end='')
+
+                      time.sleep(0.23)
+                      end2= time.time()
+                      k+=end2-start2
+                    
+                      allship+=1    
+                                   
                     print(f'{" "*(len(text)+4)}\r')
                     end=time.time()
                     if counttime==1:
                         print('Time Taken :',end-start)
-    
