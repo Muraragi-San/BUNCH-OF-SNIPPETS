@@ -1,7 +1,6 @@
 import time
 def loadercr(text='Loading',timeslot=3,counttime=0):
                     allship=0
-                    z=text
                     start = time.time()
                     k=0
                     while k<timeslot:
