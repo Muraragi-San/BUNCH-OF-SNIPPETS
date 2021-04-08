@@ -38,7 +38,7 @@ SECTION-1
     
   #tabletxt is if you want your table to be printed/added in a text file.It has been disabled by default.
   
-  #tabletxtloc stores the location where your table will be printed as a txt file.By default the location is set to the location where the c2table.py is located.If you want the    txt file created somewehere else, then change the value to your desired location.
+  #tabletxtloc stores the location where your table will be printed as a txt file.By default the location is set to the location where the c2table.py is located.If you want the txt file created somewehere else, then change the value to your desired location.
        Example:
           If you want your location to be in a folder called Example in desktop:
              set c2table.tabletxtloc = '...\\Desktop\\Example\\{custmname}.txt'
@@ -54,7 +54,7 @@ SECTION-1
                                                
                                                .If the txt file is an existing file, Is it open somewhere else(be it in cmd promp or in notepad)?
                                                .Does the application, you are using to run the code has the permission to write?
-    *Note- If you are using tabletxt and are writing to an existing file, make sure the cursor in the file should start from a new line before writing the table into it as this            could ruin the table formating.                                 
+    *Note- If you are using tabletxt and are writing to an existing file, make sure the cursor in the file should start from a new line before writing the table into it as this could ruin the table formatting.                                 
                  
     
   *Extra feature-
