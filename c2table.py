@@ -1,3 +1,6 @@
+import os 
+dir_path = os.path.dirname(os.path.realpath(__file__))+'\\Table.txt'
+
 class c2table:
     columnlist=[['Default-1',15]]
     
@@ -16,6 +19,10 @@ class c2table:
     colincenter=False
     
     tentryS='T.ENTRIES'
+    
+    tabletxt=False
+    
+    tabletxtloc=dir_path
     
     def checker(inf,L=[],r=[]):
             
@@ -243,6 +250,11 @@ class c2table:
                   row2=info.rowstr(colinfo2,len(column2)-2,re2)
                   row=info.splitrowcr(row1,row2,(167-(len(column)+(len(column2)))))
                   print(row)
+                  if info.tabletxt:
+                    with open(info.tabletxtloc,'+a') as f:
+                      f.write(head+'\n')
+                      f.write(maincolumn+'\n')
+                      f.write(row+'\n')
             else:
                 if info.checker():
                     return
@@ -253,10 +265,15 @@ class c2table:
                 else:
                   row=info.rowstr(colinfo,len(column)-2)
                   if info.dispheader:
-                    print(info.header(len(column)-2))
+                    head=info.header(len(column)-2)
+                    print(head)
                     print(column)
                   print(row)
+                if info.tabletxt:
+                  with open(info.tabletxtloc,'+a') as f:
+                    f.write(head+'\n')
+                    f.write(column+'\n')
+                    f.write(row+'\n')
                 
         except Exception as e:
              print(f"Error :{e}")
-
