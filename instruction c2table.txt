@@ -1,6 +1,6 @@
 *Note - To enable something use True and to disable it use False
 *Note - The maximum columns length should be at most 167 characters.This will be affected when using Sr.No and splittable options.
-*Note - This is optimized for font 16.
+*Note - This is optimized for font 16 cmd line.
 SECTION-1
   #This deals with single table only
   
@@ -35,6 +35,27 @@ SECTION-1
   
   #emptyrecordS is for when you want something else to be displayed for records that are empty i.e ''.
     Default which is shown for such records is '─'
+    
+  #tabletxt is if you want your table to be printed/added in a text file.It has been disabled by default.
+  
+  #tabletxtloc stores the location where your table will be printed as a txt file.By default the location is set to the location where the c2table.py is located.If you want the    txt file created somewehere else, then change the value to your desired location.
+       Example:
+          If you want your location to be in a folder called Example in desktop:
+             set c2table.tabletxtloc = '...\\Desktop\\Example\\{custmname}.txt'
+                                                        or
+                 c2table.tabletxtloc = r'...\Desktop\Example\{custmname}.txt'
+                 
+             *Note-You can replace an existing txt file name to {custmname} or a new file name.
+             
+   *Note- tabletxtloc and tabletxt should work for the most part but sometimes errors could be raised.If an error is raised check the following:
+                                              .Is the location in tabletxtloc correct?
+                                              
+                                              *Permission Denied Error:
+                                               
+                                               .If the txt file is an existing file, Is it open somewhere else(be it in cmd promp or in notepad)?
+                                               .Does the application, you are using to run the code has the permission to write?
+    *Note- If you are using tabletxt and are writing to an existing file, make sure the cursor in the file should start from a new line before writing the table into it as this            could ruin the table formating.                                 
+                 
     
   *Extra feature-
      Suppose you know there is a column that has values that are fixed like Sex can be M or F or O.
