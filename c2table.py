@@ -1,4 +1,5 @@
 import os 
+
 dir_path = os.path.dirname(os.path.realpath(__file__))+'\\Table.txt'
 
 class c2table:
