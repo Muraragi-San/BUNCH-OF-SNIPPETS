@@ -124,14 +124,35 @@ class c2table:
                 
         header+="|"
         return header,colinf
+                                      
     def splitrowcr(inf,row1,row2,colulgt):
-        a=0
+        a=0                               
+        if len(row1)>len(row2):
+            Gr=row1
+            Sm=row2
+            case1=True
+        else:
+            Gr=row2
+            Sm=row1
+            case1=False
+            genlgt=" "*len(Sm[a])
         row=""
-        for i in row1:
-            row+=f'{i}{" "*colulgt}{row2[a]}\n'
-            a+=1
-        return row
-            
+        slgt=len(Sm)
+                
+        for i in Gr:
+          if case1:
+            if a<slgt:
+             row+=f'{i}{" "*colulgt}{Sm[a]}\n'
+            else: 
+             row+=f'{i}\n'
+          else:
+            if a<slgt:
+             row+=f'{Sm[a]}{" "*colulgt}{i}\n'
+            else:
+             row+=f'{genlgt}{" "*colulgt}{i}\n'  
+          a+=1
+          
+        return row        
     def rowstr(inf,colu,totalgt,L=[],L2=[],colu2=[],totalgt2=0):
          row=''
          records=inf.recordlist
