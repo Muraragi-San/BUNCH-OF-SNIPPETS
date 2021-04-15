@@ -124,7 +124,6 @@ class c2table:
                 
         header+="|"
         return header,colinf
-                                      
     def splitrowcr(inf,row1,row2,colulgt):
         a=0                               
         if len(row1)>len(row2):
