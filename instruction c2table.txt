@@ -56,7 +56,13 @@ SECTION-1
                                                .Does the application, you are using to run the code has the permission to write?
     *Note- If you are using tabletxt and are writing to an existing file, make sure the cursor in the file should start from a new line before writing the table into it as this could ruin the table formatting.                                 
                  
-    
+  #limitdisable is only for printing tables with column length greater than 167 characters into a txt file or some file similar to a txt file.
+      *Note- If limitdisable is enabled then no table will be printed in the program.It will be directly written into the text file.
+             As there is no limit after limitdisable is enabled, you can specify column length to be anything you want.
+             #Imp- limitdisable doesn't work for splittable.
+             To enable this:
+                     c2table().limitdisable=True
+              
   *Extra feature-
      Suppose you know there is a column that has values that are fixed like Sex can be M or F or O.
      In such cases if you want your record or entry to be displayed in the middle of the column then use this feature.
