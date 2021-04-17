@@ -3,6 +3,8 @@ dir_path = os.path.dirname(os.path.realpath(__file__))+'\\Table.txt'
 
 class c2table:
     
+    limitdisable = False
+    
     columnlist=[['Default-1',15]]
     
     recordlist=[['default record']]
@@ -24,6 +26,7 @@ class c2table:
     tabletxt=False
     
     tabletxtloc=dir_path
+    
     
     def checker(inf,L=[],r=[]):
             
@@ -124,6 +127,7 @@ class c2table:
                 
         header+="|"
         return header,colinf
+                                      
     def splitrowcr(inf,row1,row2,colulgt):
         a=0                               
         if len(row1)>len(row2):
@@ -262,6 +266,7 @@ class c2table:
                 maincolumn=column+" "*(167-len(column)-len(column2))+column2
                 if len(maincolumn)>167:
                     print(f"The Column length is exceeding the current limit i.e 167 characters.\nYour length is {len(maincolumn)}||It should be at most 167 characters\nTry reducing {len(maincolumn)-167} character(s)")
+                    return
                 else:
                   if info.dispheader:
                     head=info.header(len(column),len(column2),re1,re2,len(maincolumn))
@@ -281,14 +286,17 @@ class c2table:
                     return
                 info.checkcolumn()
                 column,colinfo=info.colstr()
-                if len(column)>167:
+                if not info.limitdisable and len(column)>167:
                     print(f"The Column length is exceeding the current limit i.e 167 characters.\nYour length is {len(column)}||It should be at most 167 characters\nTry reducing {len(column)-167} character(s)")
+                    return
                 else:
                   row=info.rowstr(colinfo,len(column)-2)
                   if info.dispheader:
                     head=info.header(len(column)-2)
-                    print(head)
-                    print(column)
+                    if not info.limitdisable:
+                     print(head)
+                     print(column)
+                if not info.limitdisable:
                   print(row)
                 if info.tabletxt:
                   with open(info.tabletxtloc,'+a') as f:
